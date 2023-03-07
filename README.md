@@ -15,3 +15,5 @@ This script requires the os module, which is included in the Python standard lib
 
 ## Functionality
 The generated Python script will display a menu of options based on the input provided during script creation. Each option will be numbered, and the user can enter the corresponding number to select an option. The generated script will include a separate function for each option, with the name option_i where i is the option number. Each function will print a message indicating which option was selected, then prompt the user to press enter to return to the main menu. If the user enters "exit" at the main menu, the script will terminate.
+
+![Alt Text](https://i.imgur.com/qe2IoEb.gif)
