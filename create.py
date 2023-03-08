@@ -1,17 +1,29 @@
 import os
+import argparse
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def create_script():
-    script_name = input("What do you want to call your script? ")
-    script_name = script_name.replace(" ", "_").replace("-", "").replace(".", "")
-    while True:
-        try:
-            num_options = int(input("How many menu options do you want? "))
-            break
-        except ValueError:
-            print("Please enter a valid number.")
+    parser = argparse.ArgumentParser(description='Create a menu-based script.')
+    parser.add_argument('-n', '--name', type=str, help='name of the script')
+    parser.add_argument('-o', '--options', type=int, help='number of menu options')
+
+    args, _ = parser.parse_known_args()
+
+    if args.name and args.options:
+        script_name = args.name.replace(" ", "_").replace("-", "").replace(".", "")
+        num_options = args.options
+    else:
+        script_name = input("What do you want to call your script? ")
+        script_name = script_name.replace(" ", "_").replace("-", "").replace(".", "")
+        while True:
+            try:
+                num_options = int(input("How many menu options do you want? "))
+                break
+            except ValueError:
+                print("Please enter a valid number.")
+
     options = []
     func_names = []
     cmds = {}
@@ -97,9 +109,18 @@ def create_script():
         f.write("            exit_menu()\n")
         f.write("        else:\n")
         f.write("            print('Invalid choice. Try again.')\n")
-
-    print(f"Script '{script_name}.py' created successfully!")
-
+        clear_screen()
+        
+    print("Menu options:")
+    for i in range(num_options):
+        print(f"{i+1}) {options[i]}")
+        if options[i] in cmds:
+            print(f"command set  = {cmds[options[i]]}")
+    print(f"{len(options)}) Exit")
+    print(f"\nScript '{script_name}.py' created successfully!")
+    response = input("Would you like to run it now? (y/n) ")
+    if response.lower() == "y":
+        os.system(f"python3 {script_name}.py")
 
 clear_screen()
 create_script()
