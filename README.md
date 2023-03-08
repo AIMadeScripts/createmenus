@@ -1,6 +1,9 @@
 # Script for Creating a Menu-Driven Python Script
 This script allows you to create a simple menu-driven Python script with options specified by the user. The resulting script will be saved as a .py file and can be run from the command line.
 
+# Note
+Do not use only numbers as your menu names. You can have a1 as a menu name but not 1
+
 ## How to Use
 1. Run the script in your terminal or command prompt.
 2. Enter a name for your script (without the .py extension).
