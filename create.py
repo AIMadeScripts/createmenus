@@ -15,11 +15,28 @@ def create_script():
         script_name = args.name.replace(" ", "_").replace("-", "").replace(".", "")
         num_options = args.options
     else:
-        script_name = input("What do you want to call your script? ")
+        print("         _nnnn_ ")
+        print("        dGGGGMMb ")
+        print("       @p~qp~~qMb ")
+        print("       M|@||@) M| ")
+        print("       @,----.JM| ")
+        print("      JS^\__/  qKL ")
+        print("     dZP        qKRb ")
+        print("    dZP          qKKb ")
+        print("   fZP            SMMb ")
+        print("   HZM            MMMM ")
+        print("   FqM            MMMM ")
+        print(" __| \".        |\\dS\"qML ")
+        print(" |    `.       | `' \\Zq ")
+        print("_)      \\.___.,|     .' ")
+        print("\\____   )MMMMMP|   .' ")
+        print("     `-'       `--' Mr. Robot ")
+        print("Menu Script Generator")
+        script_name = input("What do you want to call your script?: ")
         script_name = script_name.replace(" ", "_").replace("-", "").replace(".", "")
         while True:
             try:
-                num_options = int(input("How many menu options do you want? "))
+                num_options = int(input("How many menu options do you want?: "))
                 break
             except ValueError:
                 print("Please enter a valid number.")
@@ -45,7 +62,7 @@ def create_script():
         options.append(option_name)
         func_names.append(func_name)
         # Check if option has a command
-        cmd_choice = input(f"Does option {option_name} have a command that can be run via command line? (y/n) ")
+        cmd_choice = input(f"Does option {option_name} have a command that can be run via command line? (y/n): ")
         if cmd_choice.lower() == "y":
             cmd = input(f"Enter the command exactly how you would type it in console for option {option_name}: ")
             cmds[option_name] = cmd
