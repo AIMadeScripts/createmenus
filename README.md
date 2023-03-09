@@ -1,22 +1,56 @@
-# Script for Creating a Menu-Driven Python Script
-This script allows you to create a simple menu-driven Python script with options specified by the user. The resulting script will be saved as a .py file and can be run from the command line.
+# MenuScript
 
-# Note
-Do not use only numbers as your menu names. You can have a1 as a menu name but not 1
+MenuScript is a Python script for creating and managing menus in your command line interface (CLI) application. With MenuScript, you can easily create custom menus with options that perform various actions when selected by the user.
 
-## How to Use
-1. Run the script in your terminal or command prompt.
-2. Enter a name for your script (without the .py extension).
-3. Enter the number of menu options you want to include.
-4. For each option, enter a name for the option (cannot be "exit").
-5. The script will generate a .py file with the specified name and menu options.
-6. Run the generated script from the command line and choose your desired option.
+![Alt Text](https://i.imgur.com/QOLd0rV.gif)
+
+It can be download and ran from github or installed using:
+```pip install menuscript```
+
+## Installation
+
+1. Clone this repository:
+
+    ```
+    git clone https://github.com/AIMadeScripts/createmenus
+    ```
+
+2. Navigate to the cloned directory:
+
+    ```
+    cd createmenus
+    ```
+
+3. Run the script:
+
+    ```
+    python create.py
+    ```
+
+## Usage
+
+To use MenuScript, simply run the script as menuscript if installed from pip or menuscript.py if downloaded from github and follow the prompts to create your menu. You can customize the menu by adding, removing, or modifying options as needed. You can also use the following options when creating your menu:
+
+```
+-n, --name: Specify a title for your menu.
+-o, --options: Specify the amount of options to add to the menu.
+```
+
+Example usage:
+```
+menuscript -n "My Menu Script" -o "4"
+```
+
+This will create a new script called my_menu_script.py with 4 menu options. It will also prompt you to enter the names of those options and any commands those options will execute.
 
 
-## Dependencies
-This script requires the os module, which is included in the Python standard library.
+After each naming of a menu option you will be prompted to define a command for that menu option to execute. Upon selecting "y" you could do something such as:
+```
+ping google.com
+```
 
-## Functionality
-The generated Python script will display a menu of options based on the input provided during script creation. Each option will be numbered, and the user can enter the corresponding number to select an option. The generated script will include a separate function for each option, with the name option_i where i is the option number. Each function will print a message indicating which option was selected, then prompt the user to press enter to return to the main menu. If the user enters "exit" at the main menu, the script will terminate.
+This would then assign that command to that menu option in the new file it creates.
 
-![Alt Text](https://i.imgur.com/ILzp4VD.gif)
+## Contributing
+
+If you would like to contribute to MenuScript, please fork this repository and submit a pull request with your changes.
