@@ -122,8 +122,8 @@ def create_script():
                 variable = variable.replace(' ', '')
                 func_name = f"set_{variable.lower()}"
                 f.write(f"def {func_name}():\n")
-                f.write(f"    cmds = cmds.replace('{variable}', {variable})\n")
-                f.write(f"    {variable} = input('Enter value for {variable}: ')\n")
+                f.write(f"    print('What should the variable {variable} be')\n")
+                f.write(f"    os.system(f'read {variable}')\n")
                 f.write("    input('Press enter to return to menu...')\n\n")
         f.write(f"def exit_menu():\n")
         f.write("    print('Goodbye!')\n")
